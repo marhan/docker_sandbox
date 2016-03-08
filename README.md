@@ -1,2 +1,1 @@
-# docker_sandbox
-My sandbox repository for docker
+# My sandbox repository for docker
