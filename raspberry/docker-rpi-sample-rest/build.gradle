@@ -19,6 +19,11 @@ apply plugin: 'docker'
 
 group = 'marhan'
 
+bootRepackage {
+    mainClass = 'com.example.JavaRestRepositoryApplication'
+}
+
+
 jar {
     baseName = 'dockerrpisamplerest'
     version = '0.0.1-SNAPSHOT'
