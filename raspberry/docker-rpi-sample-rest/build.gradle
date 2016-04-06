@@ -31,11 +31,12 @@ docker {
     baseImage = 'marhan/rpi-java8'
 }
 
-task buildDocker(type: Docker, dependsOn: build) {
+task distDocker(type: Docker, dependsOn: build) {
     push = true
     tagVersion = 'latest'
     applicationName = 'rpi-sample-rest'
     dockerfile = file('src/main/docker/Dockerfile')
+    addFile(file('dockerrpisamplerest.0.0.1-SNAPSHOT'), 'app.jar')
 }
 
 repositories {
