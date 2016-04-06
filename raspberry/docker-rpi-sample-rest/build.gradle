@@ -26,10 +26,15 @@ jar {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+docker {
+        maintainer = 'Markus Hanses <hanses.markus@gmail.com>'
+        baseImage = 'marhan/rpi-java8'
+}
+
 task buildDocker(type: Docker, dependsOn: build) {
-  push = false
-  applicationName = jar.baseName
-  dockerfile = file('src/main/docker/Dockerfile')
+  push = true
+  tagVersion = 'latest'
+  applicationName = 'rpi-sample-rest'
   doFirst {
     copy {
       from jar
