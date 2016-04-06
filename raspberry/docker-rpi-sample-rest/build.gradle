@@ -36,7 +36,7 @@ task distDocker(type: Docker, dependsOn: build) {
     tagVersion = 'latest'
     applicationName = 'rpi-sample-rest'
     dockerfile = file('src/main/docker/Dockerfile')
-    addFile(file('dockerrpisamplerest.0.0.1-SNAPSHOT'), 'app.jar')
+    addFile(file('build/libs/dockerrpisamplerest.0.0.1-SNAPSHOT'), 'app.jar')
 }
 
 repositories {
